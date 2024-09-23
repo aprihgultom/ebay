@@ -4,7 +4,6 @@ SEIT Written Test 2024 Cermati <br><br>
 <li> HOW TO SET UP ENVIRONMENT </li><br>
 
 SETUP ROBOT FRAMEWORK ON WINDOWS
-
 1. Download and Install IDE Software <br>
    PYCHARM https://www.jetbrains.com/pycharm/download <br>
    OR <br>
@@ -25,11 +24,9 @@ SETUP ROBOT FRAMEWORK ON WINDOWS
    pip install robotframework-seleniumlibrary <br>
    pip install robotframework-tidy <br>
    pip install robotframework-jsonlibrary <br>
-   pip install robotframework-requests <br><br><br>
-   
+   pip install robotframework-requests <br><br>
 
 SETUP ROBOT FRAMEWORK ON MAC OS
-
 1. Download and Install IDE Software <br>
    PYCHARM https://www.jetbrains.com/pycharm/download <br>
    OR <br>
@@ -65,8 +62,13 @@ SETUP ROBOT FRAMEWORK ON MAC OS
 
 <li> HOW TO RUNNING TEST SCRIPT </li><br>
   1. Open Project <br>
-     Open File Project or Clone Project in IDE https://github.com/aprihgultom/ebay.git <br><br>
+     Open File Project <br>
+     https://drive.google.com/file/d/1mMXDZzdsxwTxKQvLEVe0qBS69UfSG6Nn/view?usp=sharing <br>
+     or Clone Project in IDE https://github.com/aprihgultom/ebay.git <br><br>
   2. Open Terminal IDE <br>
-     robot -v browser:gc -d results -i regression test/Product.robot
+     robot -v browser:gc -d results -i regression test/Product.robot <br><br>
 
-   
+
+<li> OPEN RESULT TEST SCRIPT </li><br>
+     Go To Directory results <br>
+     Open file log.html or report.html in browser <br>
