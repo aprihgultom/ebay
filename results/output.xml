@@ -1,0 +1,1446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.6 on win32)" generated="2024-09-23T18:13:30.217498" rpa="false" schemaversion="5">
+<suite id="s1" name="Product" source="C:\Users\DELL\Documents\RobotFramework\Testing\SEITWrittenTest2024Cermati_ApriHasurungan\ebay\test\Product.robot">
+<test id="s1-t1" name="Product Via Category After Applying Multiple Filters" line="8">
+<kw name="Open Browser Url" owner="CommonFunction">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:13:31.402646" level="INFO">Opening browser 'firefox' to base url 'https://www.ebay.com/'.</msg>
+<arg>${strUrl}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-23T18:13:31.402646" elapsed="14.387229"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-23T18:13:45.791387" elapsed="0.005544"/>
+</kw>
+<status status="PASS" start="2024-09-23T18:13:31.399645" elapsed="14.398292"/>
+</kw>
+<kw name="Product Via Category" owner="Category">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${btnCategory}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:13:45.803936" elapsed="0.105044"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:13:45.909980" level="INFO">Clicking element '//button[@id='gh-shop-a']'.</msg>
+<arg>${btnCategory}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-23T18:13:45.909980" elapsed="0.312903"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${lblCategoryCellPhoneAccessories}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:13:46.223885" elapsed="0.056202"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:13:46.281088" level="INFO">Clicking element '//div//table[@id='gh-sbc']//ul//li/a[text()='Cell phones &amp; accessories']'.</msg>
+<arg>${lblCategoryCellPhoneAccessories}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-23T18:13:46.281088" elapsed="2.976870"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${lblSideNavCellPhoneSmartphone}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:13:49.258957" elapsed="0.050218"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:13:49.311179" level="INFO">Clicking element '//div[@class='dialog__cell']//ul//li/a[text()='Cell Phones &amp; Smartphones']'.</msg>
+<arg>${lblSideNavCellPhoneSmartphone}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-23T18:13:49.310176" elapsed="4.949795"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${btnAllFilter}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:13:54.260970" elapsed="0.061751"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:13:54.323723" level="INFO">Clicking element '//button[text()='All Filters']'.</msg>
+<arg>${btnAllFilter}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-23T18:13:54.323723" elapsed="0.343743"/>
+</kw>
+<status status="PASS" start="2024-09-23T18:13:45.803936" elapsed="8.863530"/>
+</kw>
+<kw name="Fill Pop Up Filter Product" owner="Category">
+<kw name="Get Data Category Product" owner="CommonFunction">
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2024-09-23T18:13:54.714541" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\DELL\Documents\RobotFramework\Testing\SEITWrittenTest2024Cermati_ApriHasurungan\ebay\TestData\Product.json"&gt;C:\Users\DELL\Documents\RobotFramework\Testing\SEITWrittenTest2024Cermati_ApriHasurungan\ebay\TestData\Product.json&lt;/a&gt;'.</msg>
+<msg time="2024-09-23T18:13:54.717051" level="INFO">${dataFile} = {
+    "search": {
+        "ProductSearchName": "2021 OSX MONTEREY - 2015 MACBOOK AIR 13",
+        "ProductSearchCategory": "Computers/Tablets &amp; Networking",
+        "ProductItemCompleteName": "2021 OS...</msg>
+<var>${dataFile}</var>
+<arg>${jsonDataProduct}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2024-09-23T18:13:54.713541" elapsed="0.003510"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-09-23T18:13:54.719060" level="INFO">${dataFile} = {'search': {'ProductSearchName': '2021 OSX MONTEREY - 2015 MACBOOK AIR 13', 'ProductSearchCategory': 'Computers/Tablets &amp; Networking', 'ProductItemCompleteName': '2021 OSX MONTEREY - 2015 MACBOOK AIR ...</msg>
+<var>${dataFile}</var>
+<arg>json.loads('''${dataFile}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-09-23T18:13:54.718053" elapsed="0.001007"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-09-23T18:13:54.809462" level="INFO">${CategoryName} = ['Cell Phones &amp; Smartphones']</msg>
+<var>${CategoryName}</var>
+<arg>${dataFile}</arg>
+<arg>$.category.CategoryName</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-09-23T18:13:54.719060" elapsed="0.090402"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-09-23T18:13:54.810462" level="INFO">${strCategoryName} = Cell Phones &amp; Smartphones</msg>
+<var>${strCategoryName}</var>
+<arg>${CategoryName}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-09-23T18:13:54.810462" elapsed="0.000000"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:13:54.811462" level="INFO">${strCategoryName} = Cell Phones &amp; Smartphones</msg>
+<arg>${strCategoryName}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-09-23T18:13:54.811462" elapsed="0.000000"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-09-23T18:13:54.849074" level="INFO">${Condition} = ['New']</msg>
+<var>${Condition}</var>
+<arg>${dataFile}</arg>
+<arg>$.category.Condition</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-09-23T18:13:54.812462" elapsed="0.036612"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-09-23T18:13:54.850073" level="INFO">${strCondition} = New</msg>
+<var>${strCondition}</var>
+<arg>${Condition}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-09-23T18:13:54.849074" elapsed="0.000999"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:13:54.851075" level="INFO">${strCondition} = New</msg>
+<arg>${strCondition}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-09-23T18:13:54.850073" elapsed="0.001002"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-09-23T18:13:54.890213" level="INFO">${PriceFrom} = ['1000000']</msg>
+<var>${PriceFrom}</var>
+<arg>${dataFile}</arg>
+<arg>$.category.PriceFrom</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-09-23T18:13:54.851075" elapsed="0.039138"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-09-23T18:13:54.890213" level="INFO">${strPriceFrom} = 1000000</msg>
+<var>${strPriceFrom}</var>
+<arg>${PriceFrom}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-09-23T18:13:54.890213" elapsed="0.000000"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:13:54.891212" level="INFO">${strPriceFrom} = 1000000</msg>
+<arg>${strPriceFrom}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-09-23T18:13:54.891212" elapsed="0.000000"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-09-23T18:13:54.922780" level="INFO">${PriceTo} = ['5000000']</msg>
+<var>${PriceTo}</var>
+<arg>${dataFile}</arg>
+<arg>$.category.PriceTo</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-09-23T18:13:54.892212" elapsed="0.030568"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-09-23T18:13:54.923782" level="INFO">${strPriceTo} = 5000000</msg>
+<var>${strPriceTo}</var>
+<arg>${PriceTo}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-09-23T18:13:54.922780" elapsed="0.001002"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:13:54.923782" level="INFO">${strPriceTo} = 5000000</msg>
+<arg>${strPriceTo}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-09-23T18:13:54.923782" elapsed="0.000000"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-09-23T18:13:54.955214" level="INFO">${Location} = ['Asia']</msg>
+<var>${Location}</var>
+<arg>${dataFile}</arg>
+<arg>$.category.Location</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-09-23T18:13:54.924782" elapsed="0.030432"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-09-23T18:13:54.956722" level="INFO">${strLocation} = Asia</msg>
+<var>${strLocation}</var>
+<arg>${Location}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-09-23T18:13:54.956722" elapsed="0.000000"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:13:54.957742" level="INFO">${strLocation} = Asia</msg>
+<arg>${strLocation}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-09-23T18:13:54.957742" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-09-23T18:13:54.669855" elapsed="0.287887"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${popUpFilterCondition}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:13:54.958740" elapsed="0.998014"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:13:55.957265" level="INFO">Clicking element '//span[@class='x-overlay-aspect__label' and text()='Condition']'.</msg>
+<arg>${popUpFilterCondition}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-23T18:13:55.957265" elapsed="0.460356"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${popUpFilterConditionChcNew}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:13:56.418621" elapsed="0.708510"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:13:57.128152" level="INFO">Clicking element '//label[@class='field__label field__label--end x-refine__multi-select-label']/span[text()='New']'.</msg>
+<arg>${popUpFilterConditionChcNew}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-23T18:13:57.127131" elapsed="0.405237"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${popUpFilterPrice}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:13:57.533370" elapsed="0.024603"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:13:57.558975" level="INFO">Clicking element '//span[@class='x-overlay-aspect__label' and text()='Price']'.</msg>
+<arg>${popUpFilterPrice}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-23T18:13:57.558975" elapsed="0.480479"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${popUpFilterTxtPriceFrom}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:13:58.040455" elapsed="0.665035"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:13:58.707001" level="INFO">Clicking element '//input[@class='x-textrange__input x-textrange__input--from']'.</msg>
+<arg>${popUpFilterTxtPriceFrom}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-23T18:13:58.707001" elapsed="0.364772"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:13:59.072773" level="INFO">Typing text '1000000' into text field '//input[@class='x-textrange__input x-textrange__input--from']'.</msg>
+<arg>${popUpFilterTxtPriceFrom}</arg>
+<arg>${strPriceFrom}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-23T18:13:59.072773" elapsed="0.045164"/>
+</kw>
+<kw name="Element Attribute Value Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:13:59.134251" level="INFO">Element '//input[@class='x-textrange__input x-textrange__input--from']' attribute 'value' contains value '1000000'.</msg>
+<arg>${popUpFilterTxtPriceFrom}</arg>
+<arg>value</arg>
+<arg>${strPriceFrom}</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<status status="PASS" start="2024-09-23T18:13:59.118940" elapsed="0.015311"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${popUpFilterTxtPriceFrom}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:13:59.135249" elapsed="0.020750"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:13:59.157004" level="INFO">Clicking element '//input[@class='x-textrange__input x-textrange__input--to']'.</msg>
+<arg>${popUpFilterTxtPriceTo}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-23T18:13:59.155999" elapsed="0.250235"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:13:59.407231" level="INFO">Typing text '5000000' into text field '//input[@class='x-textrange__input x-textrange__input--to']'.</msg>
+<arg>${popUpFilterTxtPriceTo}</arg>
+<arg>${strPriceTo}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-23T18:13:59.406234" elapsed="0.043675"/>
+</kw>
+<kw name="Element Attribute Value Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:13:59.470350" level="INFO">Element '//input[@class='x-textrange__input x-textrange__input--to']' attribute 'value' contains value '5000000'.</msg>
+<arg>${popUpFilterTxtPriceTo}</arg>
+<arg>value</arg>
+<arg>${strPriceTo}</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<status status="PASS" start="2024-09-23T18:13:59.450904" elapsed="0.019446"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${popUpFilterItemLocation}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:13:59.470350" elapsed="0.025530"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:13:59.497391" level="INFO">Clicking element '//span[@class='x-overlay-aspect__label' and text()='Item Location']'.</msg>
+<arg>${popUpFilterItemLocation}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-23T18:13:59.497391" elapsed="0.345026"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${popUpFilterItemRadLocation}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-09-23T18:13:59.842417" elapsed="0.849788"/>
+</kw>
+<kw name="Select Radio Button" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:00.693205" level="INFO">Selecting 'Asia' from radio button 'location'.</msg>
+<arg>${popUpFilterItemRadLocationName}</arg>
+<arg>${strLocation}</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<status status="PASS" start="2024-09-23T18:14:00.693205" elapsed="0.262548"/>
+</kw>
+<kw name="Radio Button Should Be Set To" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:00.955753" level="INFO">Verifying radio button 'location' has selection 'Asia'.</msg>
+<arg>${popUpFilterItemRadLocationName}</arg>
+<arg>${strLocation}</arg>
+<doc>Verifies radio button group ``group_name`` is set to ``value``.</doc>
+<status status="PASS" start="2024-09-23T18:14:00.955753" elapsed="0.040267"/>
+</kw>
+<status status="PASS" start="2024-09-23T18:13:54.668855" elapsed="6.327165"/>
+</kw>
+<kw name="Verify Fill Pop Filter Product" owner="Category">
+<kw name="Get VarObj PopUp Filter Selected" owner="Category">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:01.000585" level="INFO">${lblObjPopUpFilterSelected} = //div[@class='x-tray__breadcrumbs']/span[text()='New']</msg>
+<var>${lblObjPopUpFilterSelected}</var>
+<arg>//div[@class='x-tray__breadcrumbs']/span[text()='${strFilterValue}']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-23T18:14:00.999585" elapsed="0.001000"/>
+</kw>
+<return>
+<value>${lblObjPopUpFilterSelected}</value>
+<status status="PASS" start="2024-09-23T18:14:01.000585" elapsed="0.000000"/>
+</return>
+<msg time="2024-09-23T18:14:01.000585" level="INFO">${lblObjPopUpFilterSelected} = //div[@class='x-tray__breadcrumbs']/span[text()='New']</msg>
+<var>${lblObjPopUpFilterSelected}</var>
+<arg>${strCondition}</arg>
+<status status="PASS" start="2024-09-23T18:14:00.998586" elapsed="0.002999"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:01.001585" level="INFO">${lblObjPopUpFilterSelected} = //div[@class='x-tray__breadcrumbs']/span[text()='New']</msg>
+<arg>${lblObjPopUpFilterSelected}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2024-09-23T18:14:01.001585" elapsed="0.001000"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:01.025589" level="INFO">Element '//div[@class='x-tray__breadcrumbs']/span[text()='New']' is displayed.</msg>
+<arg>${lblObjPopUpFilterSelected}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:14:01.002585" elapsed="0.023004"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:01.026587" level="INFO">Verifying element '//div[@class='x-tray__breadcrumbs']/span[text()='New']' contains exact text 'New'.</msg>
+<arg>${lblObjPopUpFilterSelected}</arg>
+<arg>${strCondition}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-09-23T18:14:01.026587" elapsed="0.029890"/>
+</kw>
+<kw name="Get VarObj PopUp Filter Selected" owner="Category">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:01.059030" level="INFO">${lblObjPopUpFilterSelected} = //div[@class='x-tray__breadcrumbs']/span[text()='IDR1000000 - IDR5000000']</msg>
+<var>${lblObjPopUpFilterSelected}</var>
+<arg>//div[@class='x-tray__breadcrumbs']/span[text()='${strFilterValue}']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-23T18:14:01.059030" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${lblObjPopUpFilterSelected}</value>
+<status status="PASS" start="2024-09-23T18:14:01.059030" elapsed="0.000000"/>
+</return>
+<msg time="2024-09-23T18:14:01.060028" level="INFO">${lblObjPopUpFilterSelected} = //div[@class='x-tray__breadcrumbs']/span[text()='IDR1000000 - IDR5000000']</msg>
+<var>${lblObjPopUpFilterSelected}</var>
+<arg>IDR${strPriceFrom} - IDR${strPriceTo}</arg>
+<status status="PASS" start="2024-09-23T18:14:01.058014" elapsed="0.002014"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:01.060028" level="INFO">${lblObjPopUpFilterSelected} = //div[@class='x-tray__breadcrumbs']/span[text()='IDR1000000 - IDR5000000']</msg>
+<arg>${lblObjPopUpFilterSelected}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2024-09-23T18:14:01.060028" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:01.078612" level="INFO">Element '//div[@class='x-tray__breadcrumbs']/span[text()='IDR1000000 - IDR5000000']' is displayed.</msg>
+<arg>${lblObjPopUpFilterSelected}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:14:01.061028" elapsed="0.017584"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:01.079610" level="INFO">Verifying element '//div[@class='x-tray__breadcrumbs']/span[text()='IDR1000000 - IDR5000000']' contains exact text 'IDR1000000 - IDR5000000'.</msg>
+<arg>${lblObjPopUpFilterSelected}</arg>
+<arg>IDR${strPriceFrom} - IDR${strPriceTo}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-09-23T18:14:01.078612" elapsed="0.017531"/>
+</kw>
+<kw name="Get VarObj PopUp Filter Selected" owner="Category">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:01.098984" level="INFO">${lblObjPopUpFilterSelected} = //div[@class='x-tray__breadcrumbs']/span[text()='Asia']</msg>
+<var>${lblObjPopUpFilterSelected}</var>
+<arg>//div[@class='x-tray__breadcrumbs']/span[text()='${strFilterValue}']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-23T18:14:01.097665" elapsed="0.001319"/>
+</kw>
+<return>
+<value>${lblObjPopUpFilterSelected}</value>
+<status status="PASS" start="2024-09-23T18:14:01.098984" elapsed="0.001015"/>
+</return>
+<msg time="2024-09-23T18:14:01.099999" level="INFO">${lblObjPopUpFilterSelected} = //div[@class='x-tray__breadcrumbs']/span[text()='Asia']</msg>
+<var>${lblObjPopUpFilterSelected}</var>
+<arg>${strLocation}</arg>
+<status status="PASS" start="2024-09-23T18:14:01.096143" elapsed="0.003856"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:01.099999" level="INFO">${lblObjPopUpFilterSelected} = //div[@class='x-tray__breadcrumbs']/span[text()='Asia']</msg>
+<arg>${lblObjPopUpFilterSelected}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2024-09-23T18:14:01.099999" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:01.115773" level="INFO">Element '//div[@class='x-tray__breadcrumbs']/span[text()='Asia']' is displayed.</msg>
+<arg>${lblObjPopUpFilterSelected}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:14:01.100998" elapsed="0.014775"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:01.115773" level="INFO">Verifying element '//div[@class='x-tray__breadcrumbs']/span[text()='Asia']' contains exact text 'Asia'.</msg>
+<arg>${lblObjPopUpFilterSelected}</arg>
+<arg>${strLocation}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-09-23T18:14:01.115773" elapsed="0.029391"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:01.146166" level="INFO">Clicking element '//div[@class='x-overlay-footer__apply']/button'.</msg>
+<arg>${popUpFilterBtnApply}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-23T18:14:01.145164" elapsed="3.260471"/>
+</kw>
+<kw name="Wait For Condition" owner="SeleniumLibrary">
+<arg>return document.readyState == "complete"</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" start="2024-09-23T18:14:04.405635" elapsed="0.116971"/>
+</kw>
+<status status="PASS" start="2024-09-23T18:14:00.997542" elapsed="3.526064"/>
+</kw>
+<kw name="Verify Applied Filter Tags Result" owner="Category">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${btnAppliedFilter}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:14:04.538653" elapsed="0.307707"/>
+</kw>
+<kw name="Convert Currency Format" owner="CommonFunction">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-09-23T18:14:04.848900" level="INFO">${valPrice} = 1,000,000</msg>
+<var>${valPrice}</var>
+<arg>"{:,}".format(${strValPrice}).replace(',' , ',')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-09-23T18:14:04.847872" elapsed="0.001028"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-09-23T18:14:04.849906" level="INFO">${currCStrValPrice} = 1,000,000</msg>
+<var>${currCStrValPrice}</var>
+<arg>${valPrice}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-09-23T18:14:04.849906" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:04.850904" level="INFO">${strCurrValPrice} = 1,000,000.00</msg>
+<var>${strCurrValPrice}</var>
+<arg>${currCStrValPrice}.00</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-23T18:14:04.849906" elapsed="0.000998"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-23T18:14:04.851906" level="INFO">1,000,000.00</msg>
+<arg>${strCurrValPrice}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-23T18:14:04.850904" elapsed="0.001002"/>
+</kw>
+<return>
+<value>${strCurrValPrice}</value>
+<status status="PASS" start="2024-09-23T18:14:04.851906" elapsed="0.000000"/>
+</return>
+<msg time="2024-09-23T18:14:04.851906" level="INFO">${strCurrIdrPriceFrom} = 1,000,000.00</msg>
+<var>${strCurrIdrPriceFrom}</var>
+<arg>${strPriceFrom}</arg>
+<status status="PASS" start="2024-09-23T18:14:04.846360" elapsed="0.005546"/>
+</kw>
+<kw name="Convert Currency Format" owner="CommonFunction">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-09-23T18:14:04.853905" level="INFO">${valPrice} = 5,000,000</msg>
+<var>${valPrice}</var>
+<arg>"{:,}".format(${strValPrice}).replace(',' , ',')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-09-23T18:14:04.853905" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-09-23T18:14:04.854906" level="INFO">${currCStrValPrice} = 5,000,000</msg>
+<var>${currCStrValPrice}</var>
+<arg>${valPrice}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-09-23T18:14:04.853905" elapsed="0.001001"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:04.854906" level="INFO">${strCurrValPrice} = 5,000,000.00</msg>
+<var>${strCurrValPrice}</var>
+<arg>${currCStrValPrice}.00</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-23T18:14:04.854906" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-23T18:14:04.855906" level="INFO">5,000,000.00</msg>
+<arg>${strCurrValPrice}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-23T18:14:04.855906" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${strCurrValPrice}</value>
+<status status="PASS" start="2024-09-23T18:14:04.855906" elapsed="0.000000"/>
+</return>
+<msg time="2024-09-23T18:14:04.856905" level="INFO">${strCurrIdrPriceTo} = 5,000,000.00</msg>
+<var>${strCurrIdrPriceTo}</var>
+<arg>${strPriceTo}</arg>
+<status status="PASS" start="2024-09-23T18:14:04.852906" elapsed="0.003999"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:04.970931" level="INFO">Element '//h1[@class='b-pageheader']/span[@class='b-pageheader__text']' is displayed.</msg>
+<arg>${lblTitleFilterApplied}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:14:04.856905" elapsed="0.114026"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:04.971932" level="INFO">Verifying element '//h1[@class='b-pageheader']/span[@class='b-pageheader__text']' contains exact text 'Cell Phones &amp; Smartphones between IDR1,000,000.00 and IDR5,000,000.00'.</msg>
+<arg>${lblTitleFilterApplied}</arg>
+<arg>${strCategoryName} between IDR${strCurrIdrPriceFrom} and IDR${strCurrIdrPriceTo}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-09-23T18:14:04.971932" elapsed="0.566006"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:05.538447" level="INFO">Clicking element '//li[@class='brm__item brm__item--applied']//button'.</msg>
+<arg>${btnAppliedFilter}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-23T18:14:05.538447" elapsed="0.526743"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:06.066187" level="INFO">${strValFilterAppliedCondition} = Condition: New</msg>
+<var>${strValFilterAppliedCondition}</var>
+<arg>Condition: ${strCondition}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.065190" elapsed="0.000997"/>
+</kw>
+<kw name="Get VarObj Applied Filter Result" owner="Category">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:06.067189" level="INFO">${lblObjAppliedFilterResult} = //li[@class='brm__aspect-item brm__aspect-item--applied']/a/span[text()='Condition: New']</msg>
+<var>${lblObjAppliedFilterResult}</var>
+<arg>//li[@class='brm__aspect-item brm__aspect-item--applied']/a/span[text()='${strAppliedFilter}']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.067189" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${lblObjAppliedFilterResult}</value>
+<status status="PASS" start="2024-09-23T18:14:06.067189" elapsed="0.000000"/>
+</return>
+<msg time="2024-09-23T18:14:06.067189" level="INFO">${lblObjAppliedFilterResult} = //li[@class='brm__aspect-item brm__aspect-item--applied']/a/span[text()='Condition: New']</msg>
+<var>${lblObjAppliedFilterResult}</var>
+<arg>${strValFilterAppliedCondition}</arg>
+<status status="PASS" start="2024-09-23T18:14:06.066187" elapsed="0.001002"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:06.068700" level="INFO">${lblObjAppliedFilterResult} = //li[@class='brm__aspect-item brm__aspect-item--applied']/a/span[text()='Condition: New']</msg>
+<arg>${lblObjAppliedFilterResult}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.068192" elapsed="0.000508"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:06.188061" level="INFO">${strGetAppliedFilterResultCondition} = Condition: New
+filter applied</msg>
+<var>${strGetAppliedFilterResultCondition}</var>
+<arg>${lblObjAppliedFilterResult}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.069704" elapsed="0.118357"/>
+</kw>
+<kw name="Remove String" owner="String">
+<msg time="2024-09-23T18:14:06.189574" level="INFO">${strAppliedFilterResultCondition} = Condition: New
+</msg>
+<var>${strAppliedFilterResultCondition}</var>
+<arg>${strGetAppliedFilterResultCondition}</arg>
+<arg>filter applied</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.188571" elapsed="0.001003"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-09-23T18:14:06.190615" level="INFO">${strAppliedFilterResultCondition} = Condition: New
+</msg>
+<var>${strAppliedFilterResultCondition}</var>
+<arg>${strAppliedFilterResultCondition}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.189574" elapsed="0.001041"/>
+</kw>
+<kw name="Get Substring" owner="String">
+<msg time="2024-09-23T18:14:06.191580" level="INFO">${strAppliedFilterResultCondition} = Condition: New</msg>
+<var>${strAppliedFilterResultCondition}</var>
+<arg>${strAppliedFilterResultCondition}</arg>
+<arg>0</arg>
+<arg>14</arg>
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.190615" elapsed="0.000965"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:06.257837" level="INFO">Element '//li[@class='brm__aspect-item brm__aspect-item--applied']/a/span[text()='Condition: New']' is displayed.</msg>
+<arg>${lblObjAppliedFilterResult}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.191580" elapsed="0.067283"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${strAppliedFilterResultCondition}</arg>
+<arg>${strValFilterAppliedCondition}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.258863" elapsed="0.001001"/>
+</kw>
+<if>
+<branch type="IF" condition="'${strAppliedFilterResultCondition}' == '${strValFilterAppliedCondition}'">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Passed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.260868" elapsed="0.001000"/>
+</kw>
+<status status="PASS" start="2024-09-23T18:14:06.259864" elapsed="0.002004"/>
+</branch>
+<status status="PASS" start="2024-09-23T18:14:06.259864" elapsed="0.002004"/>
+</if>
+<kw name="Convert Currency Format" owner="CommonFunction">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-09-23T18:14:06.263867" level="INFO">${valPrice} = 1,000,000</msg>
+<var>${valPrice}</var>
+<arg>"{:,}".format(${strValPrice}).replace(',' , ',')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.262867" elapsed="0.001000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-09-23T18:14:06.264867" level="INFO">${currCStrValPrice} = 1,000,000</msg>
+<var>${currCStrValPrice}</var>
+<arg>${valPrice}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.264867" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:06.265867" level="INFO">${strCurrValPrice} = 1,000,000.00</msg>
+<var>${strCurrValPrice}</var>
+<arg>${currCStrValPrice}.00</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.264867" elapsed="0.001000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-23T18:14:06.265867" level="INFO">1,000,000.00</msg>
+<arg>${strCurrValPrice}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.265867" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${strCurrValPrice}</value>
+<status status="PASS" start="2024-09-23T18:14:06.266867" elapsed="0.000000"/>
+</return>
+<msg time="2024-09-23T18:14:06.266867" level="INFO">${strCurrPriceFrom} = 1,000,000.00</msg>
+<var>${strCurrPriceFrom}</var>
+<arg>${strPriceFrom}</arg>
+<status status="PASS" start="2024-09-23T18:14:06.262867" elapsed="0.004000"/>
+</kw>
+<kw name="Convert Currency Format" owner="CommonFunction">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-09-23T18:14:06.269379" level="INFO">${valPrice} = 5,000,000</msg>
+<var>${valPrice}</var>
+<arg>"{:,}".format(${strValPrice}).replace(',' , ',')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.268376" elapsed="0.001003"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-09-23T18:14:06.269379" level="INFO">${currCStrValPrice} = 5,000,000</msg>
+<var>${currCStrValPrice}</var>
+<arg>${valPrice}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.269379" elapsed="0.001002"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:06.270381" level="INFO">${strCurrValPrice} = 5,000,000.00</msg>
+<var>${strCurrValPrice}</var>
+<arg>${currCStrValPrice}.00</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.270381" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-23T18:14:06.271381" level="INFO">5,000,000.00</msg>
+<arg>${strCurrValPrice}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.271381" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${strCurrValPrice}</value>
+<status status="PASS" start="2024-09-23T18:14:06.271381" elapsed="0.000000"/>
+</return>
+<msg time="2024-09-23T18:14:06.272382" level="INFO">${strCurrPriceTo} = 5,000,000.00</msg>
+<var>${strCurrPriceTo}</var>
+<arg>${strPriceTo}</arg>
+<status status="PASS" start="2024-09-23T18:14:06.266867" elapsed="0.005515"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:06.272382" level="INFO">${strValFilterAppliedPrice} = Price: $1,000,000.00 to $5,000,000.00</msg>
+<var>${strValFilterAppliedPrice}</var>
+<arg>Price: $${strCurrPriceFrom} to $${strCurrPriceTo}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.272382" elapsed="0.000000"/>
+</kw>
+<kw name="Get VarObj Applied Filter Result" owner="Category">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:06.274382" level="INFO">${lblObjAppliedFilterResult} = //li[@class='brm__aspect-item brm__aspect-item--applied']/a/span[text()='Price: $1,000,000.00 to $5,000,000.00']</msg>
+<var>${lblObjAppliedFilterResult}</var>
+<arg>//li[@class='brm__aspect-item brm__aspect-item--applied']/a/span[text()='${strAppliedFilter}']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.274382" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${lblObjAppliedFilterResult}</value>
+<status status="PASS" start="2024-09-23T18:14:06.274382" elapsed="0.000000"/>
+</return>
+<msg time="2024-09-23T18:14:06.275384" level="INFO">${lblObjAppliedFilterResult} = //li[@class='brm__aspect-item brm__aspect-item--applied']/a/span[text()='Price: $1,000,000.00 to $5,000,000.00']</msg>
+<var>${lblObjAppliedFilterResult}</var>
+<arg>${strValFilterAppliedPrice}</arg>
+<status status="PASS" start="2024-09-23T18:14:06.273385" elapsed="0.001999"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:06.276382" level="INFO">${lblObjAppliedFilterResult} = //li[@class='brm__aspect-item brm__aspect-item--applied']/a/span[text()='Price: $1,000,000.00 to $5,000,000.00']</msg>
+<arg>${lblObjAppliedFilterResult}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.275384" elapsed="0.000998"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:06.336080" level="INFO">${strGetAppliedFilterResultPrice} = Price: $1,000,000.00 to $5,000,000.00
+filter applied</msg>
+<var>${strGetAppliedFilterResultPrice}</var>
+<arg>${lblObjAppliedFilterResult}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.276382" elapsed="0.059698"/>
+</kw>
+<kw name="Remove String" owner="String">
+<msg time="2024-09-23T18:14:06.337078" level="INFO">${strAppliedFilterResultPrice} = Price: $1,000,000.00 to $5,000,000.00
+</msg>
+<var>${strAppliedFilterResultPrice}</var>
+<arg>${strGetAppliedFilterResultPrice}</arg>
+<arg>filter applied</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.336080" elapsed="0.000998"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-09-23T18:14:06.338079" level="INFO">${strAppliedFilterResultPrice} = Price: $1,000,000.00 to $5,000,000.00
+</msg>
+<var>${strAppliedFilterResultPrice}</var>
+<arg>${strAppliedFilterResultPrice}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.337078" elapsed="0.001001"/>
+</kw>
+<kw name="Get Substring" owner="String">
+<msg time="2024-09-23T18:14:06.338591" level="INFO">${strAppliedFilterResultPrice} = Price: $1,000,000.00 to $5,000,000.00</msg>
+<var>${strAppliedFilterResultPrice}</var>
+<arg>${strAppliedFilterResultPrice}</arg>
+<arg>0</arg>
+<arg>37</arg>
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.338591" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:06.406097" level="INFO">Element '//li[@class='brm__aspect-item brm__aspect-item--applied']/a/span[text()='Price: $1,000,000.00 to $5,000,000.00']' is displayed.</msg>
+<arg>${lblObjAppliedFilterResult}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.339593" elapsed="0.066504"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${strAppliedFilterResultPrice}</arg>
+<arg>${strValFilterAppliedPrice}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.407097" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${strAppliedFilterResultPrice}' == '${strValFilterAppliedPrice}'">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Passed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.408610" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-09-23T18:14:06.408099" elapsed="0.000511"/>
+</branch>
+<status status="PASS" start="2024-09-23T18:14:06.407097" elapsed="0.002516"/>
+</if>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:06.409613" level="INFO">${strValFilterAppliedItemLocation} = Item Location: Asia</msg>
+<var>${strValFilterAppliedItemLocation}</var>
+<arg>Item Location: ${strLocation}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.409613" elapsed="0.000000"/>
+</kw>
+<kw name="Get VarObj Applied Filter Result" owner="Category">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:06.411615" level="INFO">${lblObjAppliedFilterResult} = //li[@class='brm__aspect-item brm__aspect-item--applied']/a/span[text()='Item Location: Asia']</msg>
+<var>${lblObjAppliedFilterResult}</var>
+<arg>//li[@class='brm__aspect-item brm__aspect-item--applied']/a/span[text()='${strAppliedFilter}']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.411615" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${lblObjAppliedFilterResult}</value>
+<status status="PASS" start="2024-09-23T18:14:06.411615" elapsed="0.000000"/>
+</return>
+<msg time="2024-09-23T18:14:06.412615" level="INFO">${lblObjAppliedFilterResult} = //li[@class='brm__aspect-item brm__aspect-item--applied']/a/span[text()='Item Location: Asia']</msg>
+<var>${lblObjAppliedFilterResult}</var>
+<arg>${strValFilterAppliedItemLocation}</arg>
+<status status="PASS" start="2024-09-23T18:14:06.410614" elapsed="0.002001"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:06.412615" level="INFO">${lblObjAppliedFilterResult} = //li[@class='brm__aspect-item brm__aspect-item--applied']/a/span[text()='Item Location: Asia']</msg>
+<arg>${lblObjAppliedFilterResult}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.412615" elapsed="0.001000"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:06.446349" level="INFO">${strGetAppliedFilterResultItemLocation} = Item Location: Asia
+filter applied</msg>
+<var>${strGetAppliedFilterResultItemLocation}</var>
+<arg>${lblObjAppliedFilterResult}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.413615" elapsed="0.034244"/>
+</kw>
+<kw name="Remove String" owner="String">
+<msg time="2024-09-23T18:14:06.447859" level="INFO">${strAppliedFilterResultItemLocation} = Item Location: Asia
+</msg>
+<var>${strAppliedFilterResultItemLocation}</var>
+<arg>${strGetAppliedFilterResultItemLocation}</arg>
+<arg>filter applied</arg>
+<arg>${strGetAppliedFilterResultItemLocation}</arg>
+<arg>filter applied</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.447859" elapsed="0.001022"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-09-23T18:14:06.448881" level="INFO">${strAppliedFilterResultItemLocation} = Item Location: Asia
+</msg>
+<var>${strAppliedFilterResultItemLocation}</var>
+<arg>${strAppliedFilterResultItemLocation}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.448881" elapsed="0.000000"/>
+</kw>
+<kw name="Get Substring" owner="String">
+<msg time="2024-09-23T18:14:06.449880" level="INFO">${strAppliedFilterResultItemLocation} = Item Location: Asia</msg>
+<var>${strAppliedFilterResultItemLocation}</var>
+<arg>${strAppliedFilterResultItemLocation}</arg>
+<arg>0</arg>
+<arg>19</arg>
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.449880" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:06.526128" level="INFO">Element '//li[@class='brm__aspect-item brm__aspect-item--applied']/a/span[text()='Item Location: Asia']' is displayed.</msg>
+<arg>${lblObjAppliedFilterResult}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.449880" elapsed="0.077248"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${strAppliedFilterResultItemLocation}</arg>
+<arg>${strValFilterAppliedItemLocation}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.527128" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${strAppliedFilterResultItemLocation}' == '${strValFilterAppliedItemLocation}'">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Passed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.528639" elapsed="0.001006"/>
+</kw>
+<status status="PASS" start="2024-09-23T18:14:06.528130" elapsed="0.001515"/>
+</branch>
+<status status="PASS" start="2024-09-23T18:14:06.528130" elapsed="0.001515"/>
+</if>
+<status status="PASS" start="2024-09-23T18:14:04.537631" elapsed="1.992014"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-09-23T18:14:06.530650" elapsed="4.368857"/>
+</kw>
+<doc>Scenario 1 : Access Product Via Category After Applying Multiple Filters</doc>
+<tag>regression</tag>
+<status status="PASS" start="2024-09-23T18:13:31.398115" elapsed="39.502941"/>
+</test>
+<test id="s1-t2" name="Access Product via Search" line="18">
+<kw name="Open Browser Url" owner="CommonFunction">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:10.905963" level="INFO">Opening browser 'firefox' to base url 'https://www.ebay.com/'.</msg>
+<arg>${strUrl}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-23T18:14:10.904963" elapsed="11.776251"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-23T18:14:22.682220" elapsed="0.022088"/>
+</kw>
+<status status="PASS" start="2024-09-23T18:14:10.903980" elapsed="11.800328"/>
+</kw>
+<kw name="Product Via Search" owner="Search">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${txtSearchProduct}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:14:22.760035" elapsed="0.098387"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${txtSearchProduct}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-09-23T18:14:22.858422" elapsed="0.028624"/>
+</kw>
+<kw name="Get Data Search Product" owner="CommonFunction">
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2024-09-23T18:14:22.889047" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\DELL\Documents\RobotFramework\Testing\SEITWrittenTest2024Cermati_ApriHasurungan\ebay\TestData\Product.json"&gt;C:\Users\DELL\Documents\RobotFramework\Testing\SEITWrittenTest2024Cermati_ApriHasurungan\ebay\TestData\Product.json&lt;/a&gt;'.</msg>
+<msg time="2024-09-23T18:14:22.890048" level="INFO">${dataFile} = {
+    "search": {
+        "ProductSearchName": "2021 OSX MONTEREY - 2015 MACBOOK AIR 13",
+        "ProductSearchCategory": "Computers/Tablets &amp; Networking",
+        "ProductItemCompleteName": "2021 OS...</msg>
+<var>${dataFile}</var>
+<arg>${jsonDataProduct}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2024-09-23T18:14:22.889047" elapsed="0.001001"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-09-23T18:14:22.892566" level="INFO">${dataFile} = {'search': {'ProductSearchName': '2021 OSX MONTEREY - 2015 MACBOOK AIR 13', 'ProductSearchCategory': 'Computers/Tablets &amp; Networking', 'ProductItemCompleteName': '2021 OSX MONTEREY - 2015 MACBOOK AIR ...</msg>
+<var>${dataFile}</var>
+<arg>json.loads('''${dataFile}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-09-23T18:14:22.890561" elapsed="0.002005"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-09-23T18:14:22.940094" level="INFO">${ProductSearchName} = ['2021 OSX MONTEREY - 2015 MACBOOK AIR 13']</msg>
+<var>${ProductSearchName}</var>
+<arg>${dataFile}</arg>
+<arg>$.search.ProductSearchName</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-09-23T18:14:22.892566" elapsed="0.047528"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-09-23T18:14:22.941100" level="INFO">${strProductSearchName} = 2021 OSX MONTEREY - 2015 MACBOOK AIR 13</msg>
+<var>${strProductSearchName}</var>
+<arg>${ProductSearchName}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-09-23T18:14:22.940094" elapsed="0.001006"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:22.941609" level="INFO">${strProductSearchName} = 2021 OSX MONTEREY - 2015 MACBOOK AIR 13</msg>
+<arg>${strProductSearchName}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-09-23T18:14:22.941609" elapsed="0.001002"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-09-23T18:14:23.056734" level="INFO">${ProductSearchCategory} = ['Computers/Tablets &amp; Networking']</msg>
+<var>${ProductSearchCategory}</var>
+<arg>${dataFile}</arg>
+<arg>$.search.ProductSearchCategory</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-09-23T18:14:22.942611" elapsed="0.114123"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-09-23T18:14:23.057735" level="INFO">${strProductSearchCategory} = Computers/Tablets &amp; Networking</msg>
+<var>${strProductSearchCategory}</var>
+<arg>${ProductSearchCategory}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-09-23T18:14:23.057735" elapsed="0.000000"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:23.058736" level="INFO">${strProductSearchCategory} = Computers/Tablets &amp; Networking</msg>
+<arg>${strProductSearchCategory}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-09-23T18:14:23.057735" elapsed="0.001001"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-09-23T18:14:23.173729" level="INFO">${ProductItemCompleteName} = ['2021 OSX MONTEREY - 2015 MACBOOK AIR 13 -2.2GHz i7 - 8GB RAM - 512 SSD']</msg>
+<var>${ProductItemCompleteName}</var>
+<arg>${dataFile}</arg>
+<arg>$.search.ProductItemCompleteName</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-09-23T18:14:23.058736" elapsed="0.114993"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-09-23T18:14:23.175728" level="INFO">${strProductItemCompleteName} = 2021 OSX MONTEREY - 2015 MACBOOK AIR 13 -2.2GHz i7 - 8GB RAM - 512 SSD</msg>
+<var>${strProductItemCompleteName}</var>
+<arg>${ProductItemCompleteName}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-09-23T18:14:23.174729" elapsed="0.000999"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:23.176729" level="INFO">${strProductItemCompleteName} = 2021 OSX MONTEREY - 2015 MACBOOK AIR 13 -2.2GHz i7 - 8GB RAM - 512 SSD</msg>
+<arg>${strProductItemCompleteName}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-09-23T18:14:23.175728" elapsed="0.001001"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-09-23T18:14:23.269043" level="INFO">${ProductItemSubtitle} = ['FREE 2-DAY SHIPPING! 1 YR WARRANTY!']</msg>
+<var>${ProductItemSubtitle}</var>
+<arg>${dataFile}</arg>
+<arg>$.search.ProductItemSubtitle</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-09-23T18:14:23.176729" elapsed="0.092314"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-09-23T18:14:23.270550" level="INFO">${strProductItemSubtitle} = FREE 2-DAY SHIPPING! 1 YR WARRANTY!</msg>
+<var>${strProductItemSubtitle}</var>
+<arg>${ProductItemSubtitle}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-09-23T18:14:23.270042" elapsed="0.000508"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:23.271550" level="INFO">${strProductItemSubtitle} = FREE 2-DAY SHIPPING! 1 YR WARRANTY!</msg>
+<arg>${strProductItemSubtitle}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-09-23T18:14:23.270550" elapsed="0.001000"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-09-23T18:14:23.337757" level="INFO">${ProductItemPrice} = ['IDR4,090,757.58']</msg>
+<var>${ProductItemPrice}</var>
+<arg>${dataFile}</arg>
+<arg>$.search.ProductItemPrice</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-09-23T18:14:23.271550" elapsed="0.066207"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-09-23T18:14:23.338757" level="INFO">${strProductItemPrice} = IDR4,090,757.58</msg>
+<var>${strProductItemPrice}</var>
+<arg>${ProductItemPrice}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-09-23T18:14:23.338757" elapsed="0.000000"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:23.340268" level="INFO">${strProductItemPrice} = IDR4,090,757.58</msg>
+<arg>${strProductItemPrice}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-09-23T18:14:23.338757" elapsed="0.001511"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-09-23T18:14:23.398434" level="INFO">${ProductItemBestOffer} = ['or Best Offer']</msg>
+<var>${ProductItemBestOffer}</var>
+<arg>${dataFile}</arg>
+<arg>$.search.ProductItemBestOffer</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-09-23T18:14:23.340268" elapsed="0.058166"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-09-23T18:14:23.399948" level="INFO">${strProductItemBestOffer} = or Best Offer</msg>
+<var>${strProductItemBestOffer}</var>
+<arg>${ProductItemBestOffer}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-09-23T18:14:23.398434" elapsed="0.001514"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:23.413489" level="INFO">${strProductItemBestOffer} = or Best Offer</msg>
+<arg>${strProductItemBestOffer}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-09-23T18:14:23.399948" elapsed="0.013541"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-09-23T18:14:23.483278" level="INFO">${ProductItemShippingLogisticsCost} = ['+IDR648,333.33 shipping']</msg>
+<var>${ProductItemShippingLogisticsCost}</var>
+<arg>${dataFile}</arg>
+<arg>$.search.ProductItemShippingLogisticsCost</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-09-23T18:14:23.413489" elapsed="0.069789"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-09-23T18:14:23.484280" level="INFO">${strProductItemShippingLogisticsCost} = +IDR648,333.33 shipping</msg>
+<var>${strProductItemShippingLogisticsCost}</var>
+<arg>${ProductItemShippingLogisticsCost}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-09-23T18:14:23.483278" elapsed="0.001002"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:23.485278" level="INFO">${strProductItemShippingLogisticsCost} = +IDR648,333.33 shipping</msg>
+<arg>${strProductItemShippingLogisticsCost}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-09-23T18:14:23.484280" elapsed="0.000998"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-09-23T18:14:23.564003" level="INFO">${ProductItemLocation} = ['from United States']</msg>
+<var>${ProductItemLocation}</var>
+<arg>${dataFile}</arg>
+<arg>$.search.ProductItemLocation</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-09-23T18:14:23.485278" elapsed="0.078725"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-09-23T18:14:23.567002" level="INFO">${strProductItemLocation} = from United States</msg>
+<var>${strProductItemLocation}</var>
+<arg>${ProductItemLocation}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-09-23T18:14:23.566003" elapsed="0.000999"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:23.567002" level="INFO">${strProductItemLocation} = from United States</msg>
+<arg>${strProductItemLocation}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-09-23T18:14:23.567002" elapsed="0.001001"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-09-23T18:14:23.630378" level="INFO">${ProductItemAuthorizedSeller} = ['eBay Refurbished']</msg>
+<var>${ProductItemAuthorizedSeller}</var>
+<arg>${dataFile}</arg>
+<arg>$.search.ProductItemAuthorizedSeller</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-09-23T18:14:23.568003" elapsed="0.062883"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-09-23T18:14:23.631885" level="INFO">${strProductItemAuthorizedSeller} = eBay Refurbished</msg>
+<var>${strProductItemAuthorizedSeller}</var>
+<arg>${ProductItemAuthorizedSeller}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-09-23T18:14:23.630886" elapsed="0.000999"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:23.632892" level="INFO">${strProductItemAuthorizedSeller} = eBay Refurbished</msg>
+<arg>${strProductItemAuthorizedSeller}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-09-23T18:14:23.631885" elapsed="0.012028"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-09-23T18:14:23.716620" level="INFO">${ProductItemWatchCountTotal} = ['37 watchers']</msg>
+<var>${ProductItemWatchCountTotal}</var>
+<arg>${dataFile}</arg>
+<arg>$.search.ProductItemWatchCountTotal</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-09-23T18:14:23.643913" elapsed="0.072707"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-09-23T18:14:23.717619" level="INFO">${strProductItemWatchCountTotal} = 37 watchers</msg>
+<var>${strProductItemWatchCountTotal}</var>
+<arg>${ProductItemWatchCountTotal}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-09-23T18:14:23.716620" elapsed="0.000999"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:23.718619" level="INFO">${strProductItemWatchCountTotal} = 37 watchers</msg>
+<arg>${strProductItemWatchCountTotal}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-09-23T18:14:23.717619" elapsed="0.001000"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-09-23T18:14:23.768808" level="INFO">${ProductItemOrnsdSpeo} = ['Sponsored']</msg>
+<var>${ProductItemOrnsdSpeo}</var>
+<arg>${dataFile}</arg>
+<arg>$.search.ProductItemOrnsdSpeo</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-09-23T18:14:23.718619" elapsed="0.050189"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-09-23T18:14:23.770319" level="INFO">${strProductItemOrnsdSpeo} = Sponsored</msg>
+<var>${strProductItemOrnsdSpeo}</var>
+<arg>${ProductItemOrnsdSpeo}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-09-23T18:14:23.770319" elapsed="0.005035"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:23.776356" level="INFO">${strProductItemOrnsdSpeo} = Sponsored</msg>
+<arg>${strProductItemOrnsdSpeo}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-09-23T18:14:23.775354" elapsed="0.001002"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2024-09-23T18:14:23.852393" level="INFO">${ProductItemSellerInfo} = ['the_brat (1,194) 99.5%']</msg>
+<var>${ProductItemSellerInfo}</var>
+<arg>${dataFile}</arg>
+<arg>$.search.ProductItemSellerInfo</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2024-09-23T18:14:23.776356" elapsed="0.076037"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2024-09-23T18:14:23.853393" level="INFO">${strProductItemSellerInfo} = the_brat (1,194) 99.5%</msg>
+<var>${strProductItemSellerInfo}</var>
+<arg>${ProductItemSellerInfo}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2024-09-23T18:14:23.852393" elapsed="0.001000"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-09-23T18:14:23.854393" level="INFO">${strProductItemSellerInfo} = the_brat (1,194) 99.5%</msg>
+<arg>${strProductItemSellerInfo}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-09-23T18:14:23.853393" elapsed="0.001000"/>
+</kw>
+<status status="PASS" start="2024-09-23T18:14:22.888047" elapsed="0.966346"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:23.855394" level="INFO">Typing text '2021 OSX MONTEREY - 2015 MACBOOK AIR 13' into text field '//input[@class='gh-tb ui-autocomplete-input']'.</msg>
+<arg>${txtSearchProduct}</arg>
+<arg>${strProductSearchName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-23T18:14:23.854393" elapsed="0.856592"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:24.712993" level="INFO">Selecting options from selection list '//select[@class='gh-sb ']' by label Computers/Tablets &amp; Networking.</msg>
+<arg>${selCategoryProduct}</arg>
+<arg>${strProductSearchCategory}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2024-09-23T18:14:24.711988" elapsed="0.337034"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:25.051577" level="INFO">Clicking element '//input[@type='submit' and @class='btn btn-prim gh-spr']'.</msg>
+<arg>${btnSearch}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-23T18:14:25.050537" elapsed="2.474939"/>
+</kw>
+<kw name="Wait For Condition" owner="SeleniumLibrary">
+<arg>return document.readyState == "complete"</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" start="2024-09-23T18:14:27.526475" elapsed="0.090640"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${lblSearchResultProductName}</arg>
+<arg>60</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:14:27.617115" elapsed="0.044217"/>
+</kw>
+<kw name="Element Attribute Value Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:27.688386" level="INFO">Element '//input[@class='gh-tb ui-autocomplete-input']' attribute 'value' contains value '2021 OSX MONTEREY - 2015 MACBOOK AIR 13'.</msg>
+<arg>${txtSearchProduct}</arg>
+<arg>value</arg>
+<arg>${strProductSearchName}</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<status status="PASS" start="2024-09-23T18:14:27.662334" elapsed="0.026052"/>
+</kw>
+<kw name="Get Selected List Label" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:27.981482" level="INFO">${strGetSelectedCategoryProduct} = Computers/Tablets &amp; Networking</msg>
+<var>${strGetSelectedCategoryProduct}</var>
+<arg>${selCategoryProduct}</arg>
+<doc>Returns the label of selected option from selection list ``locator``.</doc>
+<status status="PASS" start="2024-09-23T18:14:27.689388" elapsed="0.292094"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${strGetSelectedCategoryProduct}</arg>
+<arg>${strProductSearchCategory}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-23T18:14:27.981482" elapsed="0.002006"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:28.471438" level="INFO">Element '//h1[@class='srp-controls__count-heading']/span[@class='BOLD'][2]' is displayed.</msg>
+<arg>${lblSearchResultProductName}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:14:27.983488" elapsed="0.488953"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:28.473445" level="INFO">Verifying element '//h1[@class='srp-controls__count-heading']/span[@class='BOLD'][2]' contains exact text '2021 OSX MONTEREY - 2015 MACBOOK AIR 13'.</msg>
+<arg>${lblSearchResultProductName}</arg>
+<arg>${strProductSearchName}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-09-23T18:14:28.472441" elapsed="0.249390"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:28.959767" level="INFO">${strGetValSearchResultProductName} = 2021 OSX MONTEREY - 2015 MACBOOK AIR 13</msg>
+<var>${strGetValSearchResultProductName}</var>
+<arg>${lblSearchResultProductName}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-23T18:14:28.722835" elapsed="0.236932"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${strGetValSearchResultProductName}</arg>
+<arg>${strProductSearchName}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-09-23T18:14:28.960767" elapsed="0.000509"/>
+</kw>
+<status status="PASS" start="2024-09-23T18:14:22.758524" elapsed="6.202752"/>
+</kw>
+<kw name="Verify Product Via Search Item Product" owner="Search">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:29.078704" level="INFO">Element '//div[@class='srp-river-results clearfix']/ul/li[1]//div[@class='s-item__info clearfix']/a/div[@class='s-item__title']/span/span[@class='BOLD']' is displayed.</msg>
+<arg>${lblContentSearchResultProductItemTitle}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:14:28.974822" elapsed="0.103882"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:29.079704" level="INFO">Verifying element '//div[@class='srp-river-results clearfix']/ul/li[1]//div[@class='s-item__info clearfix']/a/div[@class='s-item__title']/span/span[@class='BOLD']' contains exact text '2021 OSX MONTEREY - 2015 MACBOOK AIR 13 -2.2GHz i7 - 8GB RAM - 512 SSD'.</msg>
+<arg>${lblContentSearchResultProductItemTitle}</arg>
+<arg>${strProductItemCompleteName}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-09-23T18:14:29.079704" elapsed="0.059188"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:29.191102" level="INFO">Element '//div[@class='srp-river-results clearfix']/ul/li[1]//div[@class='s-item__info clearfix']/div[@class='s-item__subtitle'][1]' is displayed.</msg>
+<arg>${lblContentSearchResultProductItemSubTitle}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:14:29.139890" elapsed="0.051212"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:29.191611" level="INFO">Verifying element '//div[@class='srp-river-results clearfix']/ul/li[1]//div[@class='s-item__info clearfix']/div[@class='s-item__subtitle'][1]' contains exact text 'FREE 2-DAY SHIPPING! 1 YR WARRANTY!'.</msg>
+<arg>${lblContentSearchResultProductItemSubTitle}</arg>
+<arg>${strProductItemSubtitle}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-09-23T18:14:29.191611" elapsed="0.034572"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:29.301951" level="INFO">Element '//div[@class='srp-river-results clearfix']/ul/li[1]//div[@class='s-item__info clearfix']/div[@class='s-item__details clearfix']/div/div[1]/span' is displayed.</msg>
+<arg>${lblContentSearchResultProductItemPrice}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:14:29.226183" elapsed="0.075768"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:29.302953" level="INFO">Verifying element '//div[@class='srp-river-results clearfix']/ul/li[1]//div[@class='s-item__info clearfix']/div[@class='s-item__details clearfix']/div/div[1]/span' contains exact text 'IDR4,090,757.58'.</msg>
+<arg>${lblContentSearchResultProductItemPrice}</arg>
+<arg>${strProductItemPrice}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-09-23T18:14:29.301951" elapsed="0.026061"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:29.517814" level="INFO">Element '//div[@class='srp-river-results clearfix']/ul/li[1]//div[@class='s-item__info clearfix']/div[@class='s-item__details clearfix']/div/div[2]/span' is displayed.</msg>
+<arg>${lblContentSearchResultProductItemFormatBestOfferEnabled}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:14:29.328012" elapsed="0.189802"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:29.518814" level="INFO">Verifying element '//div[@class='srp-river-results clearfix']/ul/li[1]//div[@class='s-item__info clearfix']/div[@class='s-item__details clearfix']/div/div[2]/span' contains exact text 'or Best Offer'.</msg>
+<arg>${lblContentSearchResultProductItemFormatBestOfferEnabled}</arg>
+<arg>${strProductItemBestOffer}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-09-23T18:14:29.517814" elapsed="0.027682"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:29.583648" level="INFO">Element '//div[@class='srp-river-results clearfix']/ul/li[1]//div[@class='s-item__info clearfix']/div[@class='s-item__details clearfix']/div/div[3]/span' is displayed.</msg>
+<arg>${lblContentSearchResultProductItemShippingLogisticsCost}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:14:29.545496" elapsed="0.039153"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:29.587650" level="INFO">Verifying element '//div[@class='srp-river-results clearfix']/ul/li[1]//div[@class='s-item__info clearfix']/div[@class='s-item__details clearfix']/div/div[3]/span' contains exact text '+IDR648,333.33 shipping'.</msg>
+<arg>${lblContentSearchResultProductItemShippingLogisticsCost}</arg>
+<arg>${strProductItemShippingLogisticsCost}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-09-23T18:14:29.585650" elapsed="0.068341"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:29.697142" level="INFO">Element '//div[@class='srp-river-results clearfix']/ul/li[1]//div[@class='s-item__info clearfix']/div[@class='s-item__details clearfix']/div/div[4]/span' is displayed.</msg>
+<arg>${lblContentSearchResultProductItemLocation}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:14:29.654994" elapsed="0.042148"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:29.698152" level="INFO">Verifying element '//div[@class='srp-river-results clearfix']/ul/li[1]//div[@class='s-item__info clearfix']/div[@class='s-item__details clearfix']/div/div[4]/span' contains exact text 'from United States'.</msg>
+<arg>${lblContentSearchResultProductItemLocation}</arg>
+<arg>${strProductItemLocation}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-09-23T18:14:29.698152" elapsed="0.023506"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:29.766353" level="INFO">Element '//div[@class='srp-river-results clearfix']/ul/li[1]//div[@class='s-item__info clearfix']/div[@class='s-item__details clearfix']/div/div[5]/span/span[@class='BOLD']' is displayed.</msg>
+<arg>${lblContentSearchResultProductItemAuthorizedSeller}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:14:29.721658" elapsed="0.044695"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:29.767352" level="INFO">Verifying element '//div[@class='srp-river-results clearfix']/ul/li[1]//div[@class='s-item__info clearfix']/div[@class='s-item__details clearfix']/div/div[5]/span/span[@class='BOLD']' contains exact text 'eBay Refurbished'.</msg>
+<arg>${lblContentSearchResultProductItemAuthorizedSeller}</arg>
+<arg>${strProductItemAuthorizedSeller}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-09-23T18:14:29.767352" elapsed="0.050907"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:29.853954" level="INFO">Element '//div[@class='srp-river-results clearfix']/ul/li[1]//div[@class='s-item__info clearfix']/div[@class='s-item__details clearfix']/div/div[6]/span/span[@class='BOLD']' is displayed.</msg>
+<arg>${lblContentSearchResultProductItemWatchCountTotal}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:14:29.818259" elapsed="0.035695"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:29.854954" level="INFO">Verifying element '//div[@class='srp-river-results clearfix']/ul/li[1]//div[@class='s-item__info clearfix']/div[@class='s-item__details clearfix']/div/div[6]/span/span[@class='BOLD']' contains exact text '37 watchers'.</msg>
+<arg>${lblContentSearchResultProductItemWatchCountTotal}</arg>
+<arg>${strProductItemWatchCountTotal}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-09-23T18:14:29.853954" elapsed="0.022064"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:29.904612" level="INFO">Element '//div[@class='srp-river-results clearfix']/ul/li[1]//div[@class='s-item__info clearfix']/div[@class='s-item__details clearfix']/div/div[7]/span/span/div' is displayed.</msg>
+<arg>${lblContentSearchResultProductItemOrnsdSpeo}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:14:29.876018" elapsed="0.028594"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:29.905611" level="INFO">Verifying element '//div[@class='srp-river-results clearfix']/ul/li[1]//div[@class='s-item__info clearfix']/div[@class='s-item__details clearfix']/div/div[7]/span/span/div' contains exact text 'Sponsored'.</msg>
+<arg>${lblContentSearchResultProductItemOrnsdSpeo}</arg>
+<arg>${strProductItemOrnsdSpeo}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-09-23T18:14:29.905611" elapsed="0.020068"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:29.994421" level="INFO">Element '//div[@class='srp-river-results clearfix']/ul/li[1]//div[@class='s-item__info clearfix']//div[@class='s-item__details-section--secondary']/span[2]//span[@class='s-item__seller-info-text']' is displayed.</msg>
+<arg>${lblContentSearchResultProductItemSellerInfo}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-23T18:14:29.926677" elapsed="0.068748"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-23T18:14:29.996423" level="INFO">Verifying element '//div[@class='srp-river-results clearfix']/ul/li[1]//div[@class='s-item__info clearfix']//div[@class='s-item__details-section--secondary']/span[2]//span[@class='s-item__seller-info-text']' contains exact text 'the_brat (1,194) 99.5%'.</msg>
+<arg>${lblContentSearchResultProductItemSellerInfo}</arg>
+<arg>${strProductItemSellerInfo}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-09-23T18:14:29.995425" elapsed="0.026441"/>
+</kw>
+<status status="PASS" start="2024-09-23T18:14:28.973823" elapsed="1.049044"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-09-23T18:14:30.022867" elapsed="4.472132"/>
+</kw>
+<doc>Scenario 2: Access Product via Search</doc>
+<tag>regression</tag>
+<status status="PASS" start="2024-09-23T18:14:10.902962" elapsed="23.593033"/>
+</test>
+<status status="PASS" start="2024-09-23T18:13:30.221504" elapsed="64.277291"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">regression</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Product">Product</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
