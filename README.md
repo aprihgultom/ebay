@@ -1,5 +1,4 @@
 # ebay
-SEIT Written Test 2024 Cermati <br><br>
 
 <li> HOW TO SET UP ENVIRONMENT </li><br>
 
